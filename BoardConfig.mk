@@ -97,6 +97,7 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := \
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := $(shell echo $$(( $(BOARD_SUPER_PARTITION_SIZE) - 4 * 1024**2 )))
 
 $(call soong_config_set,cbd,protocol,sipc)
+$(call soong_config_set,libexynosgdc,use_legacy_function_alignment,true)
 
 # Properties
 TARGET_PRODUCT_PROP += device/samsung/r0s/configs/props/product.prop
@@ -146,5 +147,7 @@ BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_WLAN_DEVICE := qcwcn
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+include hardware/samsung_slsi-linaro/config/BoardConfig9925.mk
 
 -include vendor/samsung/r0s/BoardConfigVendor.mk
