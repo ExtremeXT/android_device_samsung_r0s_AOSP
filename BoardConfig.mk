@@ -60,13 +60,13 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
     LLVM=1 \
     LLVM_IAS=1 \
     TARGET_SOC=s5e9925
-TARGET_KERNEL_CONFIG := s5e9925_defconfig b0s.config
+TARGET_KERNEL_CONFIG := s5e9925_defconfig r0s.config
 TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_SOURCE := kernel/samsung/s5e9925
 
 # Modules
 BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD := $(shell cat device/samsung/r0s/configs/kernel/modules/ramdisk)
-BOARD_VENDOR_KERNEL_MODULES_LOAD := sec_debug_coredump.ko fingerprint.ko fingerprint_sysfs.ko input_booster_lkm.ko dhd.ko
+BOARD_VENDOR_KERNEL_MODULES_LOAD := sec_debug_coredump.ko fingerprint.ko fingerprint_sysfs.ko input_booster_lkm.ko
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD)
 BOOT_KERNEL_MODULES := $(BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD)
 RECOVERY_KERNEL_MODULES := $(BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD)
