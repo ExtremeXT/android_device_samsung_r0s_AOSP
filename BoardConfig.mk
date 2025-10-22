@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-COMMON_PATH := device/samsung/b0s
+COMMON_PATH := device/samsung/r0s
 
 # Architecture
 TARGET_ARCH := arm64
@@ -22,8 +22,8 @@ TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_VARIANT := cortex-a76
 
 # DTS
-BOARD_DTB_CFG := device/samsung/b0s/configs/kernel/dts/dtb.cfg
-BOARD_DTBO_CFG := device/samsung/b0s/configs/kernel/dts/dtbo.cfg
+BOARD_DTB_CFG := device/samsung/r0s/configs/kernel/dts/dtb.cfg
+BOARD_DTBO_CFG := device/samsung/r0s/configs/kernel/dts/dtbo.cfg
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -65,7 +65,7 @@ TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_SOURCE := kernel/samsung/s5e9925
 
 # Modules
-BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD := $(shell cat device/samsung/b0s/configs/kernel/modules/ramdisk)
+BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD := $(shell cat device/samsung/r0s/configs/kernel/modules/ramdisk)
 BOARD_VENDOR_KERNEL_MODULES_LOAD := sec_debug_coredump.ko fingerprint.ko fingerprint_sysfs.ko input_booster_lkm.ko dhd.ko
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD)
 BOOT_KERNEL_MODULES := $(BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD)
@@ -99,8 +99,8 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := $(shell echo $$(( $(BOARD_SUPER_PARTITI
 $(call soong_config_set,cbd,protocol,sipc)
 
 # Properties
-TARGET_PRODUCT_PROP += device/samsung/b0s/configs/props/product.prop
-TARGET_VENDOR_PROP += device/samsung/b0s/configs/props/vendor.prop
+TARGET_PRODUCT_PROP += device/samsung/r0s/configs/props/product.prop
+TARGET_VENDOR_PROP += device/samsung/r0s/configs/props/vendor.prop
 
 # Ramdisks
 BOARD_RAMDISK_USE_LZ4 := true
@@ -115,7 +115,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/b0s
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/r0s
 
 # SELinux
 include device/lineage/sepolicy/exynos/sepolicy.mk
@@ -135,29 +135,16 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    device/samsung/b0s/configs/vintf/compatibility_matrix.device.xml \
+    device/samsung/r0s/configs/vintf/compatibility_matrix.device.xml \
     hardware/samsung/vintf/samsung_framework_compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := device/samsung/b0s/configs/vintf/manifest.xml
+DEVICE_MANIFEST_FILE := device/samsung/r0s/configs/vintf/manifest.xml
 
 $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 
 # Wi-Fi
-BOARD_WLAN_DEVICE                             := bcmdhd
-BOARD_WPA_SUPPLICANT_DRIVER                   := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB              := lib_driver_cmd_bcmdhd
-BOARD_HOSTAPD_DRIVER                          := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB                     := lib_driver_cmd_bcmdhd
-CONFIG_IEEE80211AX                            := true
-WIFI_AVOID_IFACE_RESET_MAC_CHANGE             := true
-WIFI_FEATURE_HOSTAPD_11AX                     := true
-WIFI_HIDL_FEATURE_AWARE                       := true
-WIFI_HIDL_FEATURE_DUAL_INTERFACE              := true
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_WLAN_DEVICE := qcwcn
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
-WPA_SUPPLICANT_VERSION                        := VER_0_8_X
-$(call soong_config_set,wpa_supplicant_8,board_wlan_bcmdhd_sae,true)
+WPA_SUPPLICANT_VERSION := VER_0_8_X
 
-# Bluetooth
-BOARD_CUSTOM_BT_CONFIG := device/samsung/b0s/bluetooth/libbt_vndcfg.txt
-BOARD_HAVE_BLUETOOTH_BCM := true
-
--include vendor/samsung/b0s/BoardConfigVendor.mk
+-include vendor/samsung/r0s/BoardConfigVendor.mk

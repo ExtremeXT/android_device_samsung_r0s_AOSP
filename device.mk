@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-COMMON_PATH := device/samsung/b0s
+COMMON_PATH := device/samsung/r0s
 
 # All components inherited here go to system image
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
@@ -35,7 +35,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Inherit proprietary files
-$(call inherit-product, vendor/samsung/b0s/b0s-vendor.mk)
+$(call inherit-product, vendor/samsung/r0s/r0s-vendor.mk)
 
 # Inherit some common Lineage stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
@@ -114,16 +114,8 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.4-service
 
 PRODUCT_COPY_FILES += \
-    vendor/samsung/b0s/proprietary/recovery/root/lib/firmware/sgpu/vangogh_lite_unified.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified.bin \
-    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/wez02_b0_c3.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/wez02_b0_c3.bin \
-    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/wez02_b0_c2.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/wez02_b0_c2.bin \
-    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/wez02_b0_c1.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/wez02_b0_c1.bin \
-    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/wez02_b0_c0.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/wez02_b0_c0.bin \
-    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/w9020_b0.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/w9020_b0.bin \
-    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/b0_vl53l5.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/b0_vl53l5.bin \
-    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/b0_00_generic_xtalk_shape.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/b0_00_generic_xtalk_shape.bin \
-    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/tsp_stm/fts2ba61y_b0.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/tsp_stm/fts2ba61y_b0.bin \
-    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/tsp_stm/fts2ba61y_b0_fake.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/tsp_stm/fts2ba61y_b0_fake.bin \
+    vendor/samsung/r0s/proprietary/recovery/root/lib/firmware/sgpu/vangogh_lite_unified.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified.bin \
+    vendor/samsung/r0s/proprietary/recovery/root/vendor/firmware/tsp_stm/fts2ba61y_r0.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/tsp_stm/fts2ba61y_b0.bin \
     
 
 PRODUCT_PACKAGES += \
@@ -281,16 +273,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     hostapd \
+    libcld80211 \
     wpa_supplicant \
-    wpa_supplicant.conf \
-    WifiOverlay
-
-# BT
-$(call soong_config_set,brcm_libbt,custom_bt_config,//$(COMMON_PATH):vnd_s5e9925.txt)
-
-PRODUCT_SOONG_NAMESPACES += hardware/broadcom/libbt
-
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl:64 \
-    android.hardware.bluetooth@1.0-service \
-    libbt-vendor:64
+    wpa_supplicant.conf

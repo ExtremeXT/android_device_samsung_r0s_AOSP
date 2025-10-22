@@ -1,6 +1,6 @@
 soong_namespace {
 	imports: [
-        "vendor/samsung/b0s"
+        "vendor/samsung/r0s"
 	],
 }
 
