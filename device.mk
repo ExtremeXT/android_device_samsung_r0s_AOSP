@@ -99,6 +99,7 @@ PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/sgpu
 
 # Codec2
 PRODUCT_PACKAGES += \
+    vendor.samsung_slsi.hardware.SbwcDecompService@1.0-service \
     samsung.hardware.media.c2@1.2-service \
     libExynosC2H264Dec \
     libExynosC2H264Enc \
