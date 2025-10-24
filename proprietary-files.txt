@@ -60,6 +60,14 @@ product/etc/permissions/privapp-permissions-google-product.xml
 product/priv-app/HotwordEnrollmentOKGoogleEx4CORTEXM55/HotwordEnrollmentOKGoogleEx4CORTEXM55.apk
 product/priv-app/HotwordEnrollmentXGoogleEx4CORTEXM55/HotwordEnrollmentXGoogleEx4CORTEXM55.apk
 
+# Bluetooth
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
+vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
+vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib64/vendor.samsung.hardware.bluetooth@2.0.so
+vendor/lib/vendor.samsung.hardware.bluetooth@2.0.so
+
 # Camera - HAL
 vendor/lib64/hw/camera.s5e9925.so
 vendor/lib64/libMERTA.so
@@ -411,6 +419,7 @@ vendor/etc/init/wifi.rc
 vendor/etc/init/wifi_qcom_ap_exynos.rc
 vendor/etc/wifi/p2p_supplicant_overlay.conf
 vendor/etc/wifi/wpa_supplicant_overlay.conf
+#vendor/lib64/libcld80211.so
 
 ## VNDK - from prebuilts/vndk/v33 - android-15.0.0_r20
 vendor/lib64/libcrypto-tm.so;FIX_SONAME|7291c0e41fa86b3739df0c0c20de21e88f43661a|f53b9d897921ade77c511eb98955db374fcc5c69

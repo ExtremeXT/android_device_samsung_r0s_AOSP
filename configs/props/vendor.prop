@@ -24,7 +24,9 @@ vendor.hwc.drm.device=/dev/dri/card1
 vendor.powerhal.disp.idle_support=false
 
 # WiFi
-wifi.direct.interface=p2p-dev-wlan0
+ro.vendor.wifi.sap.interface=wlan1
+vendor.wifi.dualconcurrent.interface=wlan1
+wifi.concurrent.interface=wlan1
 
 # RIL
 ro.vendor.epdg.support=true

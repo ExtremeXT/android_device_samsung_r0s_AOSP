@@ -50,15 +50,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 AB_OTA_UPDATER := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-TARGET_SCREEN_HEIGHT := 3088
-TARGET_SCREEN_WIDTH := 1440
+TARGET_SCREEN_HEIGHT := 2340
+TARGET_SCREEN_WIDTH := 1080
 
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     bootable/deprecated-ota \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/qcom-caf/wlan \
     hardware/samsung_slsi-linaro/exynos/cpboot_v3 \
     hardware/samsung
 
@@ -88,6 +87,10 @@ PRODUCT_PACKAGES += \
 TARGET_EXCLUDES_AUDIOFX := true
 
 $(call soong_config_set, android_hardware_audio, run_64bit, true)
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0.vendor
 
 PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/codec2
 PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/exynos
@@ -292,9 +295,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     hostapd \
-    libcld80211 \
     wpa_supplicant \
     wpa_supplicant.conf
+
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom/wlan \
+    hardware/qcom/wlan/legacy
 
 # Call Samsung LSI board support package makefiles
 $(call inherit-product, hardware/samsung_slsi-linaro/graphics/base/hwcomposer_property.mk)
