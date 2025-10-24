@@ -80,6 +80,7 @@ vendor/lib64/libhwjsqz.so
 vendor/lib64/libmpbase.so
 vendor/lib64/libsemseg.so
 vendor/lib64/libsensorlistener.so
+vendor/lib64/libswcnr.so
 vendor/lib64/libvpl.so
 vendor/lib64/vendor.samsung.hardware.thermal@1.0.so
 
@@ -89,6 +90,12 @@ vendor/lib64/vendor.samsung_slsi.hardware.enn@1.0.so
 vendor/lib64/libexynoscamera3.so
 vendor/lib64/libexynoscamera_plugin.so
 vendor/lib64/libexynoscamera_plugin_utils.so
+vendor/lib64/libexynoscamera_fakefusion_plugin.so
+vendor/lib64/libexynoscamera_cnr_plugin.so
+vendor/lib64/libexynoscamera_vpl_plugin.so
+vendor/lib64/libexynoscamera_merta_plugin.so
+vendor/lib64/libexynoscamera_fakefusion.so
+vendor/lib64/libexynoscamera_ssl_plugin.so
 
 # Codec2
 vendor/etc/media_codecs_c2.xml
@@ -113,8 +120,16 @@ vendor/lib64/libenn_user_lib.so
 # vendor/apex/com.google.android.widevine.nonupdatable.apex
 
 # Display - DQE
-vendor/etc/dqe/calib_data_colormode0.xml
+vendor/etc/dqe/DQE_coef_data.xml
+vendor/etc/dqe/calib_data_whitepoint.xml
+vendor/etc/dqe/calib_data_skincolor.xml
+vendor/etc/dqe/calib_data_rgbgain.xml
+vendor/etc/dqe/calib_data_eyetemp.xml
+vendor/etc/dqe/calib_data_colortemp.xml
 vendor/etc/dqe/calib_data_colormode0_s6e3fac_r0.xml
+vendor/etc/dqe/calib_data_colormode0.xml
+vendor/etc/dqe/calib_data_bypass.xml
+vendor/etc/dqe/calib_data_atc.xml
 
 # Display - GPU firmware
 recovery/ramdisk/lib/firmware/sgpu/vangogh_lite_unified.bin:recovery/root/lib/firmware/sgpu/vangogh_lite_unified.bin
@@ -387,7 +402,10 @@ vendor/tee/tui/resolution_common/ID00000100
 vendor/lib64/sensors.sensorhub.so
 
 # Wi-Fi
+vendor/bin/hw/macloader
 vendor/bin/init.insmod.sh
+vendor/etc/wlan_common_rc
+vendor/firmware/wlan/qcom_cfg.ini
 vendor/etc/wifi/indoorchannel.info
 vendor/etc/init/wifi.rc
 vendor/etc/init/wifi_qcom_ap_exynos.rc

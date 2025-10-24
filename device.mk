@@ -15,21 +15,12 @@
 #
 COMMON_PATH := device/samsung/r0s
 
-# All components inherited here go to system image
+# Inherit from generic products, most specific first
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_system.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# All components inherited here go to system_ext image
-$(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
-
-# All components inherited here go to product image
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_product.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
-
-# All components inherited here go to vendor image
+# Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
 
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
@@ -143,7 +134,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/angle_default.mk)
 
 PRODUCT_COPY_FILES += \
     vendor/samsung/r0s/proprietary/recovery/root/lib/firmware/sgpu/vangogh_lite_unified.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified.bin \
-    vendor/samsung/r0s/proprietary/recovery/root/vendor/firmware/tsp_stm/fts2ba61y_r0.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/tsp_stm/fts2ba61y_b0.bin \
+    vendor/samsung/r0s/proprietary/recovery/root/vendor/firmware/tsp_stm/fts2ba61y_r0.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/tsp_stm/fts2ba61y_r0.bin \
     
 
 PRODUCT_PACKAGES += \
