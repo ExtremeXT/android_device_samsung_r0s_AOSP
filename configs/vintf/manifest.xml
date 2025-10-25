@@ -36,6 +36,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.graphics.composer</name>
+        <transport>hwbinder</transport>
+        <version>2.4</version>
+        <interface>
+            <name>IComposer</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.graphics.allocator</name>
         <transport>hwbinder</transport>
         <version>4.0</version>
@@ -93,16 +102,6 @@
             <name>ISehKeyMintFactory</name>
             <instance>default</instance>
         </interface>
-    </hal>x
-    <hal format="hidl">
-        <name>vendor.samsung_slsi.hardware.SbwcDecompService</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISbwcDecompService</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISbwcDecompService/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.media.c2</name>

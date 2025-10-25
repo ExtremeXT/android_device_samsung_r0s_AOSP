@@ -1,6 +1,7 @@
+# Use game mode for high sampling rate
 on boot
-    # Use game mode for high sampling rate
     write /sys/class/sec/tsp/cmd "set_game_mode,1"
 
-    # FOD
+# FOD
+on init
     write /sys/class/sec/tsp/cmd "fod_enable,1"

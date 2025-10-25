@@ -94,7 +94,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/codec2
 PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/exynos
-PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/graphics
+PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/interfaces
+#PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/graphics
 PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/sgpu
 
 # Codec2
@@ -117,10 +118,11 @@ PRODUCT_PACKAGES += \
 # Graphics
 PRODUCT_PACKAGES += \
     libdrm_sgpu \
-    libion_exynos \
-    android.hardware.composer.hwc3-service.slsi \
     android.hardware.graphics.allocator@4.0-service-sgr \
-    android.hardware.graphics.mapper@4.0-impl-sgr
+    android.hardware.graphics.mapper@4.0-impl-sgr \
+    android.hardware.graphics.composer@2.4-service
+#     libion_exynos \
+#     android.hardware.composer.hwc3-service.slsi \
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -303,5 +305,5 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/qcom/wlan/legacy
 
 # Call Samsung LSI board support package makefiles
-$(call inherit-product, hardware/samsung_slsi-linaro/graphics/base/hwcomposer_property.mk)
-$(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
+#$(call inherit-product, hardware/samsung_slsi-linaro/graphics/base/hwcomposer_property.mk)
+#$(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)

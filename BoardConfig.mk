@@ -123,7 +123,6 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := \
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := $(shell echo $$(( $(BOARD_SUPER_PARTITION_SIZE) - 4 * 1024**2 )))
 
 $(call soong_config_set,cbd,protocol,sipc)
-$(call soong_config_set,libexynosgdc,use_legacy_function_alignment,true)
 
 # Properties
 TARGET_PRODUCT_PROP += device/samsung/r0s/configs/props/product.prop
@@ -167,6 +166,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
 DEVICE_MANIFEST_FILE := device/samsung/r0s/configs/vintf/manifest.xml
 
 $(call soong_config_set,samsungCameraVars,usage_64bit,true)
+$(call soong_config_set,samsungCameraVars,needs_sec_reserved_field,true)
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true

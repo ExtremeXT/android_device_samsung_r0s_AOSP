@@ -23,7 +23,7 @@ namespace_imports = [
     'hardware/samsung',
     'hardware/samsung_slsi-linaro/codec2',
     'hardware/samsung_slsi-linaro/exynos',
-    'hardware/samsung_slsi-linaro/graphics',
+    #'hardware/samsung_slsi-linaro/graphics',
     'hardware/samsung_slsi-linaro/interfaces',
     'hardware/samsung_slsi-linaro/sgpu',
 ]
@@ -45,6 +45,11 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .replace_needed('libaudioroute.so', 'libaudioroute_samsung.so')
         .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
+    (
+        'vendor/lib/libexynosgraphicbuffer.so',
+        'vendor/lib64/libexynosgraphicbuffer.so',
+    ): blob_fixup()
+        .add_needed('libui_shim.so'),
     'vendor/lib64/hw/camera.s5e9925.so':blob_fixup()
         .add_needed('libshim_ui.so'),
     (
@@ -119,7 +124,16 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libutils-v32.so')
         .binary_regex_replace(b'_ZN7android6Thread3runEPKcim', b'_ZN7utils326Thread3runEPKcim'),
     (
+        'vendor/lib/libexynosdisplay.so',
+        'vendor/lib/hw/hwcomposer.s5e9925.so',
+        'vendor/lib/libExynosHWCService.so',
+        'vendor/lib/sensors.sensorhub.so',
+        'vendor/lib/libeis_core.so',
+        'vendor/lib64/libexynosdisplay.so',
+        'vendor/lib64/hw/hwcomposer.s5e9925.so',
+        'vendor/lib64/libExynosHWCService.so',
         'vendor/lib64/sensors.sensorhub.so',
+        'vendor/lib64/libeis_core.so',
     ): blob_fixup()
         .add_needed('libutils-v32.so')
         .binary_regex_replace(b'_ZN7android6Thread3runEPKcim', b'_ZN7utils326Thread3runEPKcim'),
