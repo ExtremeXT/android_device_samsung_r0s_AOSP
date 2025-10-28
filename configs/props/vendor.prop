@@ -4,15 +4,27 @@ ro.boot.hypervisor.protected_vm.supported=true
 ro.boot.hypervisor.vm.supported=true
 
 # Audio
+aaudio.hw_burst_min_usec=2000
+aaudio.mmap_policy=2
+aaudio.mmap_exclusive_policy=2
+audio.offload.min.duration.secs=30
+ro.audio.flinger_standbytime_ms=2000
 ro.audio.spatializer_enabled=true
 
 # Codec2
+debug.c2.use_dmabufheaps=1
 debug.stagefright.c2inputsurface=-1
+debug.stagefright.c2-poolmask=458752
+debug.stagefright.ccodec_delayed_params=1
+debug.stagefright.ccodec_lax_type=true
+debug.stagefright.ccodec_strict_type=true
+media.c2.dmabuf.padding=512
+ro.vendor.gpu.dataspace=1
 vendor.debug.c2.sbwc.enable=true
 
 # Fingerprint
 ro.vendor.fingerprint.force_calibrate=1
-ro.vendor.fingerprint.sensor_location=720|2400|150
+ro.vendor.fingerprint.sensor_location=540|1760|130
 ro.vendor.fingerprint.type=udfps
 
 # Graphics

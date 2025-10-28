@@ -36,23 +36,19 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('vendor_spay', 'system'),
     'vendor/etc/media_codecs_performance_c2.xml': blob_fixup()
         .regex_replace('.*sec\\.(.|\n)*D', '    </D'),
-    'vendor/etc/vintf/manifest/sec_c2_manifest_default0_1_0.xml': blob_fixup()
-        .regex_replace('.*t0.*\n', ''),
     (
-        'vendor/lib64/hw/audio.primary.s5e9925.so',
-        'vendor/lib64/libaudioproxy2.so',
-        'vendor/lib64/libaudioparamupdate.so',
+        'vendor/lib/hw/audio.primary.s5e9925.so',
+        'vendor/lib/libaudioproxy2.so',
+        'vendor/lib/libaudioparamupdate.so',
     ): blob_fixup()
         .replace_needed('libaudioroute.so', 'libaudioroute_samsung.so')
         .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
-    (
-        'vendor/lib/libexynosgraphicbuffer.so',
-        'vendor/lib64/libexynosgraphicbuffer.so',
-    ): blob_fixup()
-        .add_needed('libui_shim.so'),
     'vendor/lib64/hw/camera.s5e9925.so':blob_fixup()
         .add_needed('libshim_ui.so'),
+    'vendor/lib/hw/camera.s5e9925.so':blob_fixup()
+        .add_needed('libshim_ui.so'),
     (
+        'vendor/lib/hw/vulkan.samsung.so',
         'vendor/lib64/hw/vulkan.samsung.so',
     ): blob_fixup()
         .clear_symbol_version('AHardwareBuffer_acquire')
@@ -62,6 +58,7 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_getNativeHandle')
         .clear_symbol_version('AHardwareBuffer_release'),
     (
+        'vendor/lib/libOpenCL.so',
         'vendor/lib64/libOpenCL.so',
     ): blob_fixup()
         .clear_symbol_version('AHardwareBuffer_acquire')
@@ -70,8 +67,11 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_release'),
     'vendor/lib64/lib_profiler.so': blob_fixup()
         .replace_needed('libprotobuf-cpp-full-21.7.so', 'libprotobuf-cpp-full-21.12.so'),
+    'vendor/lib/lib_profiler.so': blob_fixup()
+        .replace_needed('libprotobuf-cpp-full-21.7.so', 'libprotobuf-cpp-full-21.12.so'),
     (
-        'vendor/lib64/libalsautils_sec.so',
+        'vendor/lib/libalsautils_sec.so',
+        'vendor/lib/libaudioroute_samsung.so',
         'vendor/lib64/libaudioroute_samsung.so',
     ): blob_fixup()
         .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
@@ -108,6 +108,7 @@ blob_fixups: blob_fixups_user_type = {
             'android.hardware.security.keymint-V1-ndk.so')
         .add_needed('android.hardware.security.rkp-V3-ndk.so'),
     (
+        'vendor/lib/libexynoscamera3.so',
         'vendor/lib64/libexynoscamera3.so',
     ): blob_fixup()
         .sig_replace('88 02 00 36 21 0F 00 B0', '1F 20 03 D5 21 0F 00 B0')
@@ -117,6 +118,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libutils-v32.so')
         .binary_regex_replace(b'_ZN7android6Thread3runEPKcim', b'_ZN7utils326Thread3runEPKcim'),
     (
+        'vendor/lib/libsensorlistener.so',
+        'vendor/lib/libvdis_core.so',
         'vendor/lib64/libsensorlistener.so',
         'vendor/lib64/libvdis_core.so',
     ): blob_fixup()

@@ -19,7 +19,7 @@
 <resources>
 
     <!-- Height of the status bar -->
-    <dimen name="status_bar_height">120px</dimen>
+    <dimen name="status_bar_height">80px</dimen>
     <dimen name="status_bar_height_default">@dimen/status_bar_height</dimen>
     <dimen name="rounded_corner_radius_top">32.0dip</dimen>
     <dimen name="rounded_corner_radius_bottom">32.0dip</dimen>

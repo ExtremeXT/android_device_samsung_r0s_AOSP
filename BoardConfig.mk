@@ -21,6 +21,13 @@ TARGET_ARCH_VARIANT := armv9-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_VARIANT := cortex-a76
 
+## Architecture (Secondary)
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv8-2a
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := generic
+
 # DTS
 BOARD_DTB_CFG := device/samsung/r0s/configs/kernel/dts/dtb.cfg
 BOARD_DTBO_CFG := device/samsung/r0s/configs/kernel/dts/dtbo.cfg
