@@ -21,7 +21,7 @@ namespace_imports = [
     'device/samsung/r0s',
     'vendor/samsung/r0s',
     'hardware/samsung',
-    'hardware/samsung_slsi-linaro/codec2',
+    #'hardware/samsung_slsi-linaro/codec2',
     'hardware/samsung_slsi-linaro/exynos',
     #'hardware/samsung_slsi-linaro/graphics',
     'hardware/samsung_slsi-linaro/interfaces',
@@ -36,6 +36,8 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('vendor_spay', 'system'),
     'vendor/etc/media_codecs_performance_c2.xml': blob_fixup()
         .regex_replace('.*sec\\.(.|\n)*D', '    </D'),
+    'vendor/etc/vintf/manifest/sec_c2_manifest_default0_1_0.xml': blob_fixup()
+        .regex_replace('.*t0.*\n', ''),
     (
         'vendor/lib/hw/audio.primary.s5e9925.so',
         'vendor/lib/libaudioproxy2.so',
