@@ -14,7 +14,6 @@ ro.audio.spatializer_enabled=true
 # Codec2
 debug.c2.use_dmabufheaps=1
 debug.stagefright.c2inputsurface=-1
-debug.stagefright.c2-poolmask=458752
 debug.stagefright.ccodec_delayed_params=1
 debug.stagefright.ccodec_lax_type=true
 debug.stagefright.ccodec_strict_type=true
@@ -68,3 +67,8 @@ bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=true
 bluetooth.profile.ccp.server.enabled=false
 bluetooth.profile.vcp.controller.enabled=false
+
+persist.sys.sf.hs_mode=3
+ro.surface_flinger.set_idle_timer_ms=250
+ro.surface_flinger.set_touch_timer_ms=300
+ro.surface_flinger.use_content_detection_for_refresh_rate=true
