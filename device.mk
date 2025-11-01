@@ -117,7 +117,6 @@ PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/sgpu
 
 # Graphics
 PRODUCT_PACKAGES += \
-    vendor.samsung_slsi.hardware.SbwcDecompService@1.0-service \
     libdrm_sgpu \
     libexynosgraphicbuffer \
     android.hardware.graphics.allocator@4.0-service-sgr \
