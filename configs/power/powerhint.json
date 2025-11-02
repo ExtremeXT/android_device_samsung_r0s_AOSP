@@ -23,7 +23,7 @@
         },
         {
             "Name": "TABoost",
-            "Path": "/sys/kernel/ems/taskgroup/top-app/uclamp_min",
+            "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
             "Values": [
                 "0",
                 "100"
@@ -49,6 +49,25 @@
                 "0"
             ],
             "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "DoubleTapToWakeEnable",
+            "Path": "/sys/class/sec/tsp/cmd",
+            "Values": [
+                "aot_enable,0",
+                "aot_enable,1"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": false
+        },
+        {
+            "Name": "TouchscreenEnable",
+            "Path": "/sys/class/sec/tsp/enabled",
+            "Values": [
+                "2,1",
+                "1,0"
+            ],
             "ResetOnInit": true
         }
     ],
@@ -88,6 +107,18 @@
             "Node": "MIFMinFreq",
             "Duration": 250,
             "Value": "1352000"
+        },
+        {
+            "PowerHint": "DOUBLE_TAP_TO_WAKE",
+            "Node": "DoubleTapToWakeEnable",
+            "Duration": 0,
+            "Value": "aot_enable,1"
+        },
+        {
+            "PowerHint": "INTERACTIVE",
+            "Node": "TouchscreenEnable",
+            "Duration": 0,
+            "Value": "2,1"
         }
     ]
 }

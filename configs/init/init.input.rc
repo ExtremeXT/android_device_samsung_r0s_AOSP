@@ -2,6 +2,10 @@
 on boot
     write /sys/class/sec/tsp/cmd "set_game_mode,1"
 
+# Power
+on init
+    setprop vendor.powerhal.init 1
+
 # FOD
 on init
     write /sys/class/sec/tsp/cmd "fod_enable,1"
