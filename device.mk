@@ -92,28 +92,28 @@ $(call soong_config_set, android_hardware_audio, run_64bit, false)
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor
 
-#PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/codec2
+PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/codec2
 PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/exynos
 PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/interfaces
 #PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/graphics
 PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/sgpu
 
 # Codec2
-# PRODUCT_PACKAGES += \
-#     samsung.hardware.media.c2@1.2-service \
-#     libExynosC2H264Dec \
-#     libExynosC2H264Enc \
-#     libExynosC2HevcDec \
-#     libExynosC2HevcEnc \
-#     libExynosC2Vp8Dec \
-#     libExynosC2Vp8Enc \
-#     libExynosC2Vp9Dec \
-#     libExynosC2Vp9Enc \
-#     libExynosC2Av1Dec
+PRODUCT_PACKAGES += \
+    samsung.hardware.media.c2@1.2-service \
+    libExynosC2H264Dec \
+    libExynosC2H264Enc \
+    libExynosC2HevcDec \
+    libExynosC2HevcEnc \
+    libExynosC2Vp8Dec \
+    libExynosC2Vp8Enc \
+    libExynosC2Vp9Dec \
+    libExynosC2Vp9Enc \
+    libExynosC2Av1Dec
 
-# PRODUCT_PACKAGES += \
-#     codec2.vendor.base.policy \
-#     codec2.vendor.ext.policy
+PRODUCT_PACKAGES += \
+    codec2.vendor.base.policy \
+    codec2.vendor.ext.policy
 
 # Graphics
 PRODUCT_PACKAGES += \
