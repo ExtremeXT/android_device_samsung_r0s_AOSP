@@ -67,6 +67,13 @@
      <dimen name="physical_power_button_center_screen_location_y">1240px</dimen>
      <string name="config_mainBuiltInDisplayCutout">M 0,0 H -9.333333333333333 V 27 H 9.333333333333333 V 0 H 0 Z @dp</string>
      <bool name="config_supportDoubleTapWake">true</bool>
+     <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
+     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
+     <bool name="config_sustainedPerformanceModeSupported">true</bool>
+     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
+     <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+     <bool name="config_dozeAlwaysOnEnabled">false</bool>
+     <item name="config_screenBrightnessDozeFloat" format="float" type="dimen">0.013960784</item>
 
      <bool name="config_automatic_brightness_available">true</bool>
 

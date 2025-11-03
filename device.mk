@@ -147,6 +147,10 @@ PRODUCT_PACKAGES += \
     hdr_samsung_mx.key \
     libshim_ui
 
+# SamsungDoze
+PRODUCT_PACKAGES += \
+    SamsungDoze
+
 # Fastbootd
 PRODUCT_PACKAGES += fastbootd
 
